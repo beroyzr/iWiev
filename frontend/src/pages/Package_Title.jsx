@@ -33,7 +33,7 @@ const PackageTitle = () => {
   
     if (questions.length > 0 && packageTitle) {
       try {
-        const response = await axios.post('http://localhost:5000/api/question-package', {
+        const response = await axios.post('/question-package', {
           title: packageTitle,
           questions
         });

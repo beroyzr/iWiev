@@ -17,7 +17,7 @@ const AddInterviewPopup = ({ setIsPopupOpen }) => {
   useEffect(() => {
     const fetchQuestionPackages = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/question-packages');
+        const response = await axios.get('/question-packages');
         setQuestionPackages(response.data);
       } catch (error) {
         console.error('Soru paketleri alınırken hata oluştu:', error);
@@ -43,7 +43,7 @@ const AddInterviewPopup = ({ setIsPopupOpen }) => {
       
       try {
         // Backend'e POST isteği gönder
-        const response = await axios.post('http://localhost:5000/api/interviews', newInterview);
+        const response = await axios.post('/interviews', newInterview);
         // Yanıtta gelen selectedPackages ID'lerini tam paket verileriyle değiştir
         const newInterviewData = response.data;
         newInterviewData.selectedPackages = selectedPackages; // ID'leri tam verilerle değiştir

@@ -17,7 +17,7 @@ const QuestionPackageEdit = () => {
   // Paket sorularını backend'den çekme fonksiyonu
   const fetchSelectedQuestionPackage = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/question-package/${packageIndex}`);
+      const response = await axios.get(`/question-package/${packageIndex}`);
       setCurrentQuestions(response.data.questions);
       setPackageTitle(response.data.title);
     } catch (error) {
@@ -37,7 +37,7 @@ const QuestionPackageEdit = () => {
   // Soru silme fonksiyonu
   const handleDeleteQuestion = async (questionId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/question-package/${packageIndex}/question/${questionId}`);
+      await axios.delete(`/question-package/${packageIndex}/question/${questionId}`);
       setCurrentQuestions((prevQuestions) =>
         prevQuestions.filter((question) => question._id !== questionId)
       );

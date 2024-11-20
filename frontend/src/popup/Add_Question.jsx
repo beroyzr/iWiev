@@ -11,7 +11,7 @@ const AddQuestionPopup = ({ setIsPopupOpen, onQuestionAdd }) => {
   const handleSave = async () => {
     if (question.trim() && minutes) {
       try {
-        const response = await axios.post(`http://localhost:5000/api/question-package/${packageIndex}/question`, {
+        const response = await axios.post(`/question-package/${packageIndex}/question`, {
           question: question.trim(),
           minutes,
         });

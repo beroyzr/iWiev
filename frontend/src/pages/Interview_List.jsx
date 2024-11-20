@@ -17,7 +17,7 @@ const InterviewList = () => {
   useEffect(() => {
     const fetchInterviews = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/interviews');
+        const response = await axios.get('/interviews');
         setInterviews(response.data); // Gelen veriyi store'a ekle
       } catch (error) {
         console.error("Mülakatlar alınırken hata:", error);

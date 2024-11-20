@@ -39,7 +39,7 @@ const useManageQuestionStore = create((set) => ({
   // Soru paketlerini backend'den çekme fonksiyonu
   fetchQuestionPackages: async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/question-packages');
+      const response = await axios.get('/question-packages');
       set({ questionPackages: response.data });
     } catch (error) {
       console.error("Soru paketleri alınırken hata oluştu:", error);
