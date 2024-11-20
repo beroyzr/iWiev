@@ -21,7 +21,7 @@ const useInterviewStore = create((set) => ({
   removeInterview: async (id) => {
     try {
       // Backend'den mülakatı sil
-      await axios.delete(`http://localhost:5000/api/interviews/${id}`);
+      await axios.delete(`/interviews/${id}`);
       // Store'dan mülakatı sil
       set((state) => ({
         interviews: state.interviews.filter((interview) => interview._id !== id),

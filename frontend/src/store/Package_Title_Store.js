@@ -26,7 +26,7 @@ const usePackageQuestionStore = create((set, get) => ({
     if (packageTitle && questions.length > 0) {
       try {
         console.log("Save request sent to backend");
-        const response = await axios.post('http://localhost:5000/api/question-package', {
+        const response = await axios.post('/question-package', {
           title: packageTitle,
           questions,
         });

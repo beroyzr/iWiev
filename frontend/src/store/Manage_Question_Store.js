@@ -26,7 +26,7 @@ const useManageQuestionStore = create((set) => ({
   removeQuestionPackage: async (packageId) => {
     try {
       // Backend'den paketi silme isteği gönder
-      await axios.delete(`http://localhost:5000/api/question-package/${packageId}`);
+      await axios.delete(`/question-package/${packageId}`);
       // State'i güncelle
       set((state) => ({
         questionPackages: state.questionPackages.filter((pkg) => pkg._id !== packageId),

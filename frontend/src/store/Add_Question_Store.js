@@ -7,7 +7,7 @@ const usePackageQuestionStore = create((set) => ({
   // Soru ekleme fonksiyonu
   addQuestion: async (packageId, question, minutes) => {
     try {
-      const response = await axios.post(`http://localhost:5000/api/question-package/${packageId}/question`, {
+      const response = await axios.post(`/question-package/${packageId}/question`, {
         question,
         minutes,
       });
