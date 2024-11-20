@@ -20,7 +20,7 @@ function InterviewQuestions() {
 
   const fetchInterviewQuestions = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/interview/${interviewId}/questions`);
+      const response = await axios.get(`/interview/${interviewId}/questions`);
       const fetchedQuestions = response.data.questions;
 
       setQuestions(fetchedQuestions);
@@ -89,7 +89,7 @@ function InterviewQuestions() {
         formData.append('questionId', questions[currentQuestionIndex]._id);
 
         try {
-          await axios.post(`http://localhost:5000/api/interview/${interviewId}`, formData, {
+          await axios.post(`/interview/${interviewId}`, formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },

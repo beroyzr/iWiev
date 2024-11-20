@@ -35,7 +35,7 @@ function CandidateInfoForm() {
     try {
       // Backend'e form verilerini ve interviewId'yi gönder
       const response = await axios.post(
-        `http://localhost:5000/api/interview/${interviewId}/personel-information`,
+        `/interview/${interviewId}/personel-information`,
         formValues
       );
 

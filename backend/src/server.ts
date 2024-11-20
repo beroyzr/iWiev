@@ -12,7 +12,12 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [process.env.ADMIN_FRONTEND_URL||''], // Replace with your frontend's URL
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use('/api', questionRoutes); 
